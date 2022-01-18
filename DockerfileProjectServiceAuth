@@ -1,0 +1,13 @@
+FROM node:16.13.0-alpine
+
+WORKDIR /service_auth
+
+COPY ./service_auth/package.json /service_auth
+
+RUN npm install
+
+COPY ./service_auth /service_auth/
+
+CMD ["node","service_auth.js"]
+
+EXPOSE 3000
